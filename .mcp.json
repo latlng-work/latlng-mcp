@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "latlng": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.latlng.work/mcp",
+        "--header",
+        "Authorization: Bearer ${LATLNG_API_KEY}"
+      ],
+      "env": {
+        "LATLNG_API_KEY": "latlng_REPLACE_WITH_YOUR_SERVER_KEY"
+      }
+    }
+  }
+}
