@@ -2,6 +2,11 @@
 
 Standalone Cloudflare Worker for the remote LatLng MCP endpoint.
 
+## Links
+
+- Website: https://www.latlng.work
+- MCP endpoint: https://mcp.latlng.work/mcp
+
 ## Endpoint
 
 ```text
