@@ -1,0 +1,27 @@
+name = "latlng-mcp"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+workers_dev = true
+
+[vars]
+API_BASE_URL = "https://api.latlng.work"
+DASHBOARD_URL = "https://dash.latlng.work"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "latlng-db"
+database_id = "d10fa6da-b0ee-4e5f-8801-c6c2917b5060"
+
+[env.production]
+routes = [
+  { pattern = "mcp.latlng.work", custom_domain = true }
+]
+
+[env.production.vars]
+API_BASE_URL = "https://api.latlng.work"
+DASHBOARD_URL = "https://dash.latlng.work"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "latlng-db"
+database_id = "d10fa6da-b0ee-4e5f-8801-c6c2917b5060"
