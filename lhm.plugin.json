@@ -1,0 +1,176 @@
+{
+  "identifier": "latlng-mcp",
+  "name": "LatLng MCP",
+  "version": "0.1.0",
+  "author": "latlng-work",
+  "authorUrl": "https://github.com/latlng-work",
+  "category": "business",
+  "cloudEndpoint": "https://mcp.latlng.work/mcp",
+  "description": "Geocoding, reverse geocoding, places search, nearby POIs, and map/location workflows for AI agents using the LatLng API.",
+  "homepage": "https://github.com/latlng-work/latlng-mcp",
+  "icon": "https://www.latlng.work/favicon.png",
+  "tags": [
+    "geocoding",
+    "reverse-geocoding",
+    "places",
+    "maps",
+    "location",
+    "openstreetmap",
+    "business"
+  ],
+  "tools": [
+    {
+      "name": "geocode_address",
+      "description": "Convert an address or place name into latitude and longitude coordinates.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Address or place name to geocode."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 5
+          },
+          "lang": {
+            "type": "string",
+            "description": "Optional language code, for example en."
+          },
+          "lat": {
+            "type": "number",
+            "description": "Optional latitude to bias results."
+          },
+          "lon": {
+            "type": "number",
+            "description": "Optional longitude to bias results."
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "reverse_geocode",
+      "description": "Convert latitude and longitude coordinates into an address.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "description": "Latitude."
+          },
+          "lon": {
+            "type": "number",
+            "description": "Longitude."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 1
+          },
+          "lang": {
+            "type": "string",
+            "description": "Optional language code, for example en."
+          }
+        },
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "search_places",
+      "description": "Search for places by name, optionally biased by location and category.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Place name or search query."
+          },
+          "lat": {
+            "type": "number",
+            "description": "Optional latitude to bias results."
+          },
+          "lon": {
+            "type": "number",
+            "description": "Optional longitude to bias results."
+          },
+          "type": {
+            "type": "string",
+            "description": "Optional place category, for example restaurant or cafe."
+          },
+          "country": {
+            "type": "string",
+            "description": "Optional country code, for example US."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 20
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "find_nearby_places",
+      "description": "Find points of interest near a latitude and longitude.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "description": "Center latitude."
+          },
+          "lon": {
+            "type": "number",
+            "description": "Center longitude."
+          },
+          "radius": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50000,
+            "default": 1000
+          },
+          "type": {
+            "type": "string",
+            "description": "Optional place category, for example restaurant or cafe."
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 20
+          }
+        },
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "list_place_categories",
+      "description": "List supported place categories for place search and nearby queries.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  ]
+}

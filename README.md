@@ -17,7 +17,8 @@ GET  https://mcp.latlng.work/health
 
 ## Authentication
 
-The MCP endpoint requires a LatLng dashboard Server Key on every JSON-RPC request.
+Tool discovery and the first 10 anonymous tool calls per day work without a key.
+For higher limits, create a free LatLng Server Key at https://dash.latlng.work.
 
 Accepted formats:
 
