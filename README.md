@@ -41,6 +41,26 @@ Public maps keys (`pk_latlng_...`) are rejected before tool discovery or tool ca
 
 ```bash
 npm install
+npm run start
+```
+
+The `start` script runs a stdio MCP server for local clients and registry checks.
+It answers `initialize`, `ping`, and `tools/list` without credentials. Tool calls
+require a LatLng Server Key in `LATLNG_API_KEY`.
+
+## Docker
+
+```bash
+docker build -t latlng-mcp .
+docker run -i --rm -e LATLNG_API_KEY=latlng_your_dashboard_server_key latlng-mcp
+```
+
+For registry checks that only introspect the server, no API key is required.
+
+## Worker Development
+
+```bash
+npm install
 npm run dev
 ```
 

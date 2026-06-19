@@ -5,6 +5,7 @@
   "description": "Remote MCP worker for LatLng tools.",
   "type": "module",
   "scripts": {
+    "start": "node src/stdio.js",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "deploy:production": "wrangler deploy --env production",
